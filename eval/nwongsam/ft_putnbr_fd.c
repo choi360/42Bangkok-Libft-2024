@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: komethaw <choi360@gmail.com>               +#+  +:+       +#+        */
+/*   By: nwongsam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 21:45:15 by komethaw          #+#    #+#             */
-/*   Updated: 2024/03/31 01:25:25 by komethaw         ###   ########.fr       */
+/*   Created: 2024/03/10 20:21:10 by nwongsam          #+#    #+#             */
+/*   Updated: 2024/03/10 20:42:51 by nwongsam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n % 10 + '0', fd);
 	}
 }
-/*
-void	ft_putnbr_fd(int n, int fd)
-{
-	char	*s;
-
-	s = ft_itoa(n);
-	ft_putstr_fd(s, fd);
-	free(s);
-}
-*/
