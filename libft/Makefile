@@ -6,7 +6,7 @@
 #    By: komethaw <choi360@gmail.com>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 21:39:36 by komethaw          #+#    #+#              #
-#    Updated: 2024/03/27 21:39:38 by komethaw         ###   ########.fr        #
+#    Updated: 2024/04/23 20:03:15 by komethaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,17 +47,20 @@ SRCS =	ft_atoi.c \
 
 NAME =	libft.a
 
+OBJS =	$(SRCS:.c=.o)
+
 FLAGS =	-Wall -Wextra -Werror
 
 all:	$(NAME)
 
-$(NAME):$(SRCS)
-	@gcc $(FLAGS) -c $(SRCS) -I./
-	@ar rc $(NAME) *.o
-	@rm -f *.o
+$(NAME):$(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+
+%.o : %.c
+	@cc $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -f *.o
+	@rm -f $(OBJS)
 
 fclean:	clean
 	@rm -f $(NAME)
